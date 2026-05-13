@@ -69,7 +69,7 @@ int main() {
             window.draw(pared);
         }
 
-        window.display();
+        window.display(); 
     }
 
     return 0;
