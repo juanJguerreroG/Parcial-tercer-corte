@@ -1,6 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include <optional>
-#include <iostream>
 #include <vector>
 
 #include "funciones.h"
@@ -19,10 +18,10 @@ int main() {
 
     std::vector<sf::RectangleShape> paredes;
     paredes.push_back(sf::RectangleShape({30.f, 30.f}));
-    paredes.back().setFillColor(sf::Color::White);
+    paredes.back().setFillColor(sf::Color(245, 39, 118));
 
 
-    float playerSpeed = 1.0f;
+    float playerSpeed = 2.0f;
 
     while (window.isOpen()) {
 
@@ -63,7 +62,10 @@ int main() {
 
         window.draw(player1);
 
-        CrearParedes(paredes, {100.f, 100.f}, 'h', 8);
+        CrearParedes(paredes, {0.f, 0.f}, 'h', 27);
+        CrearParedes(paredes, {0.f, 0.f}, 'v', 20);
+        CrearParedes(paredes, {770.f, 0.f}, 'v', 20);
+        CrearParedes(paredes, {0.f, 570.f}, 'h', 27);
 
         for (sf::RectangleShape& pared : paredes) {
             window.draw(pared);
