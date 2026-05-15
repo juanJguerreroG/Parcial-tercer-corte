@@ -1,8 +1,8 @@
-#include <SFML/Graphics.hpp>
 #include <optional>
 #include <vector>
 
 #include "funciones.h"
+#include "enemigos.h"
 
 int main() {
 
@@ -13,13 +13,15 @@ int main() {
 
     sf::RectangleShape player1({50.f, 50.f});
     player1.setFillColor(sf::Color(49, 212, 146));
-    player1.setPosition({50.f, 250.f});
-
+    player1.setPosition({50.f, 250.f}); 
 
     std::vector<sf::RectangleShape> paredes;
     paredes.push_back(sf::RectangleShape({30.f, 30.f}));
     paredes.back().setFillColor(sf::Color(245, 39, 118));
 
+    sf::RectangleShape enemigo1({50.f, 50.f});
+    enemigo1.setPosition({700.f, 250.f});
+    enemigo1.setFillColor(sf::Color::Red);
 
     float playerSpeed = 2.0f;
 
@@ -70,6 +72,9 @@ int main() {
         for (sf::RectangleShape& pared : paredes) {
             window.draw(pared);
         }
+
+        window.draw(enemigo1);
+        MoverEnemigo(enemigo1, paredes);
 
         window.display(); 
     }

@@ -9,6 +9,7 @@ find_package(SFML 3 REQUIRED COMPONENTS Graphics Window System)
 add_executable(Juego 
         src/main.cpp 
         src/funciones.cpp
+        src/Enemigos.cpp
         )
 
 target_include_directories(Juego PRIVATE include)
